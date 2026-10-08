@@ -1,6 +1,6 @@
 const C=25,S=24,canvas=document.getElementById("game"),ctx=canvas.getContext("2d");
 const $=id=>document.getElementById(id);let snake,food,power=null,dir={x:1,y:0},next={x:1,y:0},score=0,level=1,coins=0,running=false,paused=false,last=0,acc=0,diff="Medium",sound=true,runs=+localStorage.runs||0,xp=+localStorage.xp||0,best=+localStorage.neonBest||0;
-const speeds={Easy:240,Medium:210,Hard:175,Insane:145},themes=[
+const speeds={Easy:330,Medium:290,Hard:250,Insane:210},themes=[
 ["Cyber Neon","#00f3ff","#070b14","#ff007f"],["Matrix","#39ff14","#051408","#a855f7"],["Galaxy","#c084fc","#0d0b1e","#f43f5e"],["Inferno","#ff4500","#140707","#eab308"],["Arctic","#38bdf8","#09131a","#ff467e"]];let ti=0;let leaderboard=JSON.parse(localStorage.neonLeaderboard||"[]");
 $("best").textContent=String(best).padStart(4,"0");$("xp").textContent=xp;$("runs").textContent=runs;renderLeaderboard();
 function setTheme(){let t=themes[ti];document.documentElement.style.setProperty("--accent",t[1]);document.documentElement.style.setProperty("--bg",t[2]);document.documentElement.style.setProperty("--pink",t[3]);}
